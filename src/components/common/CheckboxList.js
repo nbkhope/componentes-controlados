@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Checkbox from './Checkbox';
+import { Checkbox } from './Checkbox';
 // <CheckboxList
 //   name="frutas[]"
 //   options={frutaOptions}
@@ -38,4 +38,4 @@ const CheckboxList = (props) => {
   );
 };
 
-export default CheckboxList;
+export { CheckboxList };

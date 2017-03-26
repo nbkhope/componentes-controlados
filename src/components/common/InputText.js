@@ -4,7 +4,7 @@ const InputText = (props) => {
   const styles = {
     fontWeight: 'bold'
   };
-  
+
   return (
     <div>
       <label style={styles}>{props.label}</label>{' '}
@@ -18,4 +18,4 @@ const InputText = (props) => {
   );
 };
 
-export default InputText;
+export { InputText };

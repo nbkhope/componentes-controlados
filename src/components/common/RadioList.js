@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Radio from './Radio';
+import { Radio } from './Radio';
 
 // <RadioList
 //   name="genero"
@@ -36,4 +36,4 @@ const RadioList = (props) => {
   );
 };
 
-export default RadioList;
+export { RadioList };
