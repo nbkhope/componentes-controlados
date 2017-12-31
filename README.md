@@ -1,4 +1,4 @@
-## NBK Tutor apresenta: Componentes Controlados
+## NBK Mundo Tech apresenta: Componentes Controlados
 
 [Aprenda com vídeo aulas aqui.](https://www.youtube.com/watch?v=V-yobkZdmNQ&list=PLUbb2i4BuuzAZISr_WSergXu56iUTgF4v)
 
