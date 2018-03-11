@@ -52,4 +52,66 @@ describe('Formulario component', () => {
 
     expect(component.state('nome')).toBe('ola mundo');
   });
+
+  test('deve incluir um CheckboxList pro campo de frutas[]', () => {
+    const checkbox = component.findWhere((node) => node.prop('name') === 'frutas[]');
+
+    expect(checkbox.length).toBe(1);
+  });
+
+  test('deve incluir um CheckboxList com o label `Frutas Que Gosto:`', () => {
+    const checkbox = component.findWhere(node => node.prop('name') === 'frutas[]');
+    expect(checkbox.prop('label')).toBe('Frutas Que Gosto:');
+  });
+
+  test('deve incluir um CheckboxList que leva a prop options com uma lista de objetos com informacoes de cada fruta', () => {
+    const checkbox = component.findWhere(node => node.prop('name') === 'frutas[]');
+
+    const listaDeFrutas = [
+      {
+        id: 1,
+        label: 'Banana',
+        value: 'banana'
+      },
+      {
+        id: 2,
+        label: 'Maçã',
+        value: 'maçã'
+      },
+      {
+        id: 3,
+        label: 'Morango',
+        value: 'morango'
+      },
+    ];
+
+    expect(checkbox.prop('options')).toEqual(listaDeFrutas);
+  });
+
+  test('deve incluir um CheckboxList que leva a prop checkedOptions com o valor da propriedade frutas do estado do componente', () => {
+    const checkbox = component.findWhere(node => node.prop('name') === 'frutas[]');
+
+    expect(checkbox.prop('checkedOptions')).toBe(component.state('frutas'));
+  });
+
+  test('deve incluir um CheckboxList que leva a prop onChange definida com uma funcao que seta o estado do componente com o novo valor de state.frutas', () => {
+    const event = {
+      target: {
+        value: 'morango',
+      },
+    };
+    component.setProps({
+      frutas: {
+        banana: false,
+        maçã: false,
+        morango: false,
+      },
+    });
+
+    const checkbox = component.findWhere(node => node.prop('name') === 'frutas[]');
+    const onFrutasChange = checkbox.prop('onChange');
+    onFrutasChange(event);
+
+    expect(component.state('frutas').morango).toBe(true);
+  });
 });
